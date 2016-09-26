@@ -2,11 +2,11 @@
 
 ## What do we need ?
 
-* [Node.js]() to make use of npm
+* [Node.js](https://nodejs.org/) to make use of npm
 
-* [Babel]() to translate ES6 code to older javascript
+* [Babel](https://babeljs.io/) to translate ES6 code to older javascript
 
-* [Webpack]() to support `require` and `import` statements
+* [Webpack](https://webpack.github.io/) to support `require` and `import` statements
 
 * a web server
 
