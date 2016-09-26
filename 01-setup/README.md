@@ -1,0 +1,39 @@
+# SETUP YOUR REACT JS DEV ENVIRONMENT
+
+## What do we need ?
+
+* [Node.js]() to make use of npm
+
+* [Babel]() to translate ES6 code to older javascript
+
+* [Webpack]() to support `require` and `import` statements
+
+* a web server
+
+## Steps
+
+1 - Create a workspace and init a npm project
+```
+$ npm init
+```
+
+2 - Install React and React DOM
+```
+$ npm install react react-dom --save
+```
+
+3 - Install Babel libs
+```
+$ npm install babel -g # do this only once
+$ npm install babel-loader babel-core babel-preset-es2015 babel-preset-react --save-dev
+```
+
+4 - Install Webpack
+```
+$ npm install webpack -g
+```
+
+5 - Install a web server
+```
+$ npm install webpack-dev-server -g
+```

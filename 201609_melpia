@@ -1,0 +1,79 @@
+PLANNING FORMATION
+
+A caser :
+
+-> React router
+-> Redux et React Redux
+	"redux-auth-wrapper": "0.5.0",
+    "redux-localstorage": "0.4.0",
+    "redux-thunk": "2.1.0",
+-> Redux form
+-> Next React release ?
+-> Modularity
+-> react-intl
+-> cordova
+-> cordova plugins
+-> advanced redux
+=> prévoir la conversion de 2 composants changr : http://dev.amakumo.net/~ahiebel/framework/framework_gettingstarted.php
+
+JOUR 1
+
+	Matin :
+
+		-> React fundamentals
+		-> ES6 vs Javascript ?
+		-> vs Haxe ?
+
+	Après midi :
+
+		->
+
+
+JOUR 2
+
+	Matin :
+
+		-> Redux & React Redux
+
+
+	Après midi :
+
+		-> React router
+
+
+JOUR 3
+
+	Matin :
+
+		-> Advanced Redux
+
+
+	Après midi :
+
+		-> React intl
+		-> Redux form
+
+
+JOUR 4
+
+	Matin :
+
+		-> practicing
+
+
+	Après midi :
+
+		-> practicing
+
+
+JOUR 5
+
+	Matin :
+
+		-> Apache Cordova + plugins
+
+
+	Après midi :
+
+		-> Apache Cordova + plugins
+
