@@ -1,14 +1,18 @@
 # SETUP YOUR REACT JS DEV ENVIRONMENT
 
-## What do we need ?
+## What do we need and why ?
 
 * [Node.js](https://nodejs.org/) to make use of npm
 
-* [Babel](https://babeljs.io/) to translate ES6 code to older javascript
+* [Babel](https://babeljs.io/) to translate ES6 and JSX code to older javascript
 
 * [Webpack](https://webpack.github.io/) to support `require` and `import` statements
 
-* a web server
+	See also:
+	- [browserify](browserify.org/)
+	- [JSPM](jspm.io)
+
+* a web server, to serve our files
 
 ## Steps
 
@@ -36,4 +40,9 @@ $ npm install webpack -g
 5 - Install a web server
 ```
 $ npm install webpack-dev-server -g
+```
+
+6 - Launch the server
+```
+webpack-dev-server --content-base app/
 ```
