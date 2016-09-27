@@ -146,6 +146,12 @@ Updating:
 
 [see code here](./src/app13.js)
 
+The View (or Presentational) component know how to render the view. It's concerned about how things look.
+
+The Container component knows how to behave with the rest of the app. It's concerned about how things go.
+
+A good example of presentational components is [MaterialUI](material-ui.com).
+
 
 ## To go further...
 

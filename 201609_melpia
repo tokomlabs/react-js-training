@@ -20,20 +20,21 @@ JOUR 1
 
 	Matin :
 
+		-> Setup, tooling...
 		-> React fundamentals
-		-> ES6 vs Javascript ?
-		-> vs Haxe ?
 
 	Après midi :
 
-		->
+		-> CSS modules, webpacking
+		-> Porting Melpia components to React ?
 
 
 JOUR 2
 
 	Matin :
 
-		-> Redux & React Redux
+		-> Redux,
+		-> React Redux
 
 
 	Après midi :
