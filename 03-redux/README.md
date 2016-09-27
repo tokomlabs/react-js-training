@@ -1,14 +1,26 @@
 # Redux
 
-* Redux is a state management system.
+What is Redux?
+
+Redux is a state management system.
+
+It is not the only one. See also:
+- [Flux](https://github.com/facebook/flux)
+- [MobX](https://github.com/mobxjs)
+- ...
+- any home made MVC you could implement..
+
+
+## Redux rules
 
 * The Redux state of an application is a single READONLY javascript object.
 
-* The Redux state of an application can be changed only through dispatching actions.
+* The Redux state of an application can be changed only by dispatching actions.
 
 * An action is a simple js object that must have a `type` field of type string. It can have other field as a payload. Actions do not describe how the state has to be changed.
 
 * The changes to apply to the state are done by reducers. Reducers are pure functions that take the previous state and the action as arguments and return the new state.
+
 
 ## Run the test case
 
@@ -17,6 +29,7 @@ $ npm install
 $ babel --presets react src/app01.js -o app/index01.js
 $ http-server app -p 8888
 ```
+
 
 ## Important Redux notions:
 
@@ -40,6 +53,7 @@ store.subscribe( () => { /* TODO refresh UI */ } ); // add a subscriber to the s
   Or use ES6 `...` spread operator
 
 
+
 # React Redux
 
 Now how to inject the Redux store conviniently in a React application ?
@@ -51,6 +65,7 @@ Now how to inject the Redux store conviniently in a React application ?
 ```
 npm install --save react-redux
 ```
+
 
 ## Run the test case
 
