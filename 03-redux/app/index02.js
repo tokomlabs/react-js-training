@@ -23,11 +23,10 @@ const todo = (state, action) => {
         return state;
       }
 
-      // return {
-      //   ...state,
-      //   completed: !state.completed
-      // };
-      return Object.assign({}, state, { completed: !state.completed });
+      return _extends({}, state, {
+        completed: !state.completed
+      });
+    // or return Object.assign({}, state, { completed: !state.completed });
 
     default:
 

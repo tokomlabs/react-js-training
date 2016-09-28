@@ -73,7 +73,7 @@ npm install --save react-redux
 
 ```
 $ npm install
-$ babel --presets react src/app02.js -o app/index02.js
+$ babel --presets react --plugins transform-object-rest-spread src/app02.js -o app/index02.js
 $ http-server app -p 8888
 ```
 
