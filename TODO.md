@@ -7,7 +7,7 @@
 
 - 05 : polish
 
-- 06 : all
+- 06 : re-check
 
 - 07 : all
 

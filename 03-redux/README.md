@@ -11,6 +11,12 @@ It is not the only one. See also:
 - any home made MVC you could implement..
 
 
+### Installation
+
+```
+npm install redux --save
+```
+
 ## Redux rules
 
 * The Redux state of an application is a single READONLY javascript object.

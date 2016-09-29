@@ -1,6 +1,18 @@
 # React Router
 
-* [React Router Bible](https://github.com/ReactTraining/react-router/blob/master/docs/API.md)
+[React Router Bible](https://github.com/ReactTraining/react-router/blob/master/docs/API.md)
+
+## Installation
+
+```
+npm install react-router --save # currently installs the 2.x version
+
+npm install react-router@beta --save # currently installs the 3.x version (recommended as will be lts)
+
+npm install react-router@next --save # currently installs the 4.x version
+```
+
+## Important React Router notions
 
 * Comes in with different React components: Router, Route, Link
 

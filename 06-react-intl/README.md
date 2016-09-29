@@ -8,7 +8,13 @@ Internationalization library for React JS application.
 
 [React Intl Components](https://github.com/yahoo/react-intl/wiki/Components)
 
-## 
+## Installation
+
+```
+npm install react-intl --save
+```
+
+## React Intl notions
 
 * React Intl is built on the [Intl javascript API](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl).
 
