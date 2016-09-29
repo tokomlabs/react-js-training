@@ -1,0 +1,4 @@
+{
+	"greetings": "Bienvenue {name}!",
+	"msg-count": "Vous {count, plural, =0 {n'avez pas de nouveau message} one {avez un message non lu.} other {avez {count} messages non lus.}}."
+}

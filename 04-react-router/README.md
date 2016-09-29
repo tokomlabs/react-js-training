@@ -16,6 +16,10 @@
 
 * Setting route leave hooks is possible with `router.setLeaveHook()` method
 
+* Page animations can be added with components like [react-addons-css-transition-group](https://github.com/facebook/react/blob/master/src/addons/transitions/ReactCSSTransitionGroup.js)
+
+* A component can be "Router aware" with the HOC function `withRouter()`
+
 ## Run sample
 
 ```
