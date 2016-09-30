@@ -22,7 +22,7 @@
     "webpack": "^1.13.2"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "webpack-dev-server --config webpack.config.dev.js --content-base app/"
   },
   "author": "",
   "license": "ISC"

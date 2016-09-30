@@ -4,7 +4,7 @@ var CopyWebpackPlugin = require('copy-webpack-plugin');
 module.exports = {
 	entry: './src/main.js',
 	output: {
-		path: './cordova/www',
+		path: './dist',
 		filename: 'index.js'
 	},
 	module: {
@@ -39,7 +39,7 @@ module.exports = {
 		new ExtractTextPlugin('styles/app.css'),
 		new CopyWebpackPlugin([
             // {output}/to/file.txt
-            { from: 'app/index_cordova.html', to: 'index.html' }
+            { from: 'app/index_web.html', to: 'index.html' }
         ], { copyUnmodified: true })
 	]
 }
