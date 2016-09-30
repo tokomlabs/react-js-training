@@ -166,4 +166,8 @@ $ cd ..
 $ webpack --config webpack.config.cordova.js --content-base app/
 ```
 
-* Run
+* Run the app on Android
+```
+$ cd cordova
+$ cordova run android
+```

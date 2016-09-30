@@ -1,6 +1,5 @@
 - 02 :
 	* polish
-	* app13.js
 	* dist generation with images, etc...
 
 - 04 : polish
@@ -11,4 +10,4 @@
 
 - 07 : re-check
 
-- 08 : all
+- 08 : re-check

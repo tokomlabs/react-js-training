@@ -4,11 +4,12 @@
   "description": "Learn about React JS components",
   "main": "app/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "webpack-dev-server --config webpack.config.dev.js  --content-base app/"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "parse": "^1.9.2",
     "react": "^15.3.2",
     "react-dom": "^15.3.2"
   },
