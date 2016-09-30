@@ -1,0 +1,29 @@
+.root {
+
+	height: 100%;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+}
+
+.root > div {
+
+	display: flex;
+	justify-content: center;
+}
+
+.root button {
+	padding: 5px 10px;
+    display: inline;
+    background: #777;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 8vw;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    text-shadow: 1px 1px #666;
+}

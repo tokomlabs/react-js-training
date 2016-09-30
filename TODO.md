@@ -9,6 +9,6 @@
 
 - 06 : re-check
 
-- 07 : all
+- 07 : re-check
 
 - 08 : all
