@@ -1,58 +1,66 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-class App12 extends React.Component {
+let Mixin = (InnerComponent) => class extends React.Component {
 
 	constructor(){
 
 		super();
-		
-		this.state = 
 
-			{
-				data: [
-					{id: 1, name: "Simon Bailey"},
-					{id: 2, name: "Thomas Burleson"},
-					{id: 3, name: "Will Button"},
-					{id: 4, name: "Ben Clinkinbeard"},
-					{id: 5, name: "Kent Dodds"},
-					{id: 6, name: "Trevor Ewen"},
-					{id: 7, name: "Aaron Frost"},
-					{id: 8, name: "Joel Hooks"},
-					{id: 9, name: "Jafar Husain"},
-					{id: 10, name: "Tim Kindberg"},
-					{id: 11, name: "John Lindquist"},
-					{id: 12, name: "Joe Maddalone"},
-					{id: 13, name: "Tyler McGinnis"},
-					{id: 14, name: "Scott Moss"},
-					{id: 15, name: "Robert Penner"},
-					{id: 16, name: "Keith Peters"},
-					{id: 17, name: "Lukas Ruebbelke"},
-					{id: 18, name: "Brett Shollenberger"}
-				]
-			}
+		this.update = this.update.bind(this);
+
+		this.state = {val: 0}
 	}
+
+	update(){
+
+		this.setState({val: this.state.val + 1})
+	}
+
+	componentWillMount(){
+
+		console.log('will mount')
+	}
+
+	render(){
+
+		return (
+			<InnerComponent update={this.update}
+		    				{...this.state}
+		    				{...this.props} />
+		)
+	}
+
+	componentDidMount(){
+
+		console.log('mounted')
+	}
+}
+
+const MyButton = (props) => <button onClick={props.update}>
+								{props.text} - {props.val}
+							</button>
+
+const MyLabel = (props) => <label onMouseOver={props.update}>
+								{props.text} - {props.val}
+							</label>
+
+let MixedButton = Mixin(MyButton);
+
+let MixedLabel = Mixin(MyLabel);
+
+class App10 extends React.Component {
 
 	render() {
 
-		let rows = this.state.data.map( person => { return <PersonRow key={person.id} data={person} /> })
-
 		return (
-			<table>
-				<tbody>{rows}</tbody>
-			</table>
+			<div>
+				<MixedButton text="Click me" />
+				<br/>
+				<MixedLabel text="Mouse over me" />
+			</div>
 		)
 	}
 }
 
-const PersonRow = (props) => {
-
-	return (
-		<tr>
-			<td>{props.data.id}</td>
-			<td>{props.data.name}</td>
-		</tr>
-	)
-}
-
-export default App12
+export default App10

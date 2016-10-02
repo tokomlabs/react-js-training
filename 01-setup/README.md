@@ -1,5 +1,6 @@
 # SETUP YOUR REACT JS DEV ENVIRONMENT
 
+
 ## What do we need and why ?
 
 * [Node.js](https://nodejs.org/) to make use of npm
@@ -13,6 +14,7 @@
 	- [JSPM](jspm.io)
 
 * a web server, to serve our files
+
 
 ## Steps
 
@@ -42,7 +44,20 @@ $ npm install webpack -g
 $ npm install webpack-dev-server -g
 ```
 
-6 - Launch the server
+6 - Configure webpack (see [webpack.config.js](./webpack.config.js))
+
+
+7 - Launch the server
 ```
 webpack-dev-server --content-base app/
 ```
+
+
+# References
+
+* [npm reference](https://docs.npmjs.com/)
+
+* [Babel reference](http://babeljs.io/docs/setup/)
+
+* [Webpack reference](https://webpack.github.io/docs/)
+

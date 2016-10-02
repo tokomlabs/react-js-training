@@ -7,15 +7,21 @@ It's not the only one out there, see also:
 - [formsy-react](https://github.com/christianalfoni/formsy-react)
 - ...
 
-[React Redux Form Bible](https://davidkpiano.github.io/react-redux-form/docs.html)
+
+## References
+
+* [React Redux Form Bible](https://davidkpiano.github.io/react-redux-form/docs.html)
 
 
 ## Installation
 
+Ensure you have those dependencies installed:
 ```
-# ensure you have those dependencies installed
 npm install react react-dom react-redux redux redux-thunk --save
+```
 
+And then:
+```
 npm install react-redux-form@latest --save   # currently installs the new 1.0.x version
 ```
 

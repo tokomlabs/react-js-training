@@ -2,7 +2,10 @@
 
 Mobile application engine based on a WebView for rendering + plugin system for native features.
 
-[Apache Cordova Bible](https://cordova.apache.org/docs/en/6.x/guide/overview/index.html)
+
+## References
+
+* [Apache Cordova Bible](https://cordova.apache.org/docs/en/6.x/guide/overview/index.html)
 
 
 ## Important Cordova aspects
@@ -171,3 +174,4 @@ $ webpack --config webpack.config.cordova.js --content-base app/
 $ cd cordova
 $ cordova run android
 ```
+

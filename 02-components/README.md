@@ -1,8 +1,19 @@
 # React JS Components
 
-"With React JS, every thing is a component."
+"In React, every thing is component."
 
-Refer to the [React API Bible](https://facebook.github.io/react/docs/top-level-api.html).
+
+## References
+
+* [React API Bible](https://facebook.github.io/react/docs/top-level-api.html),
+
+* [MDN javascript API reference](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference),
+
+* [ES6 specifications](http://www.ecma-international.org/ecma-262/6.0/)
+
+* [Learn ES6](https://babeljs.io/docs/learn-es2015/)
+
+* [ES6 current native support](http://kangax.github.io/compat-table/es6/)
 
 
 ## JSX, WTF ?
@@ -25,6 +36,14 @@ Compare compiled JSX with JSX:
 ```
 $ babel --presets react src.js -o dist.js --watch
 ```
+
+Few points:
+
+* JSX is the ideal component markup language
+
+* JSX will ease team work between integrators and developers
+
+* JSX is close to HTML
 
 
 ## Class components vs function components
@@ -102,7 +121,8 @@ Or more simply: props
 * accessible through special prop `props.children`
 
 
-## lifecycle hooks
+
+## Component lifecycle methods
 
 Mounting / Unmounting:
 
@@ -121,6 +141,7 @@ Updating:
 * componentDidUpdate(prevProps, prevState)
 
 
+
 ## Performance optimization on a component
 
 [see code here](./src/app09.js)
@@ -128,17 +149,18 @@ Updating:
 * shouldComponentUpdate(nextProps, nextState)
 
 
+
 ## Patterns
-
-* HOC
-
-[see code here](./src/app10.js)
 
 * Composable components
 
-[see code here](./src/app11.js)
+[see code here](./src/app10.js)
 
 * Dynamically generated components
+
+[see code here](./src/app11.js)
+
+* HOC
 
 [see code here](./src/app12.js)
 
@@ -151,6 +173,7 @@ The View (or Presentational) component know how to render the view. It's concern
 The Container component knows how to behave with the rest of the app. It's concerned about how things go.
 
 A good example of presentational components is [MaterialUI](material-ui.com).
+
 
 
 ## To go further...

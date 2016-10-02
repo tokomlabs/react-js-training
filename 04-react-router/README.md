@@ -1,6 +1,10 @@
 # React Router
 
-[React Router Bible](https://github.com/ReactTraining/react-router/blob/master/docs/API.md)
+
+## References
+
+* [React Router Bible](https://github.com/ReactTraining/react-router/blob/master/docs/API.md)
+
 
 ## Installation
 
@@ -11,6 +15,7 @@ npm install react-router@beta --save # currently installs the 3.x version (recom
 
 npm install react-router@next --save # currently installs the 4.x version
 ```
+
 
 ## Important React Router notions
 
@@ -31,6 +36,7 @@ npm install react-router@next --save # currently installs the 4.x version
 * Page animations can be added with components like [react-addons-css-transition-group](https://github.com/facebook/react/blob/master/src/addons/transitions/ReactCSSTransitionGroup.js)
 
 * A component can be "Router aware" with the HOC function `withRouter()`
+
 
 ## Run sample
 

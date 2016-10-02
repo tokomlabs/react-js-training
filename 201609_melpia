@@ -1,20 +1,8 @@
 PLANNING FORMATION
 
-A caser :
-
--> React router
--> Redux et React Redux
-	redux-auth-wrapper
-    redux-localstorage
-    redux-thunk
--> Redux form
--> Next React release ?
--> Modularity
--> react-intl
--> cordova
--> cordova plugins
--> advanced redux
 => prévoir la conversion de 2 composants changr : http://dev.amakumo.net/~ahiebel/framework/framework_gettingstarted.php
+=> redux-auth-wrapper
+=> redux-localstorage
 
 JOUR 1
 
@@ -25,7 +13,7 @@ JOUR 1
 
 	Après midi :
 
-		-> CSS modules, webpacking
+		-> CSS modules, webpacking ?
 		-> Porting Melpia components to React ?
 
 

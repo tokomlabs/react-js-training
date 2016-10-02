@@ -2,17 +2,22 @@
 
 Internationalization library for React JS application.
 
-[React Intl Bible](https://github.com/yahoo/react-intl/wiki)
 
-[React Intl API](https://github.com/yahoo/react-intl/wiki/API)
+## References
 
-[React Intl Components](https://github.com/yahoo/react-intl/wiki/Components)
+* [React Intl Bible](https://github.com/yahoo/react-intl/wiki)
+
+* [React Intl API](https://github.com/yahoo/react-intl/wiki/API)
+
+* [React Intl Components](https://github.com/yahoo/react-intl/wiki/Components)
+
 
 ## Installation
 
 ```
 npm install react-intl --save
 ```
+
 
 ## React Intl notions
 

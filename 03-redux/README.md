@@ -2,7 +2,7 @@
 
 What is Redux?
 
-Redux is a state management system.
+Redux is a state management system (or state container) for javascript apps.
 
 It is not the only one. See also:
 - [Flux](https://github.com/facebook/flux)
@@ -11,13 +11,21 @@ It is not the only one. See also:
 - any home made MVC you could implement..
 
 
+### References
+
+* [Redux reference](http://redux.js.org/)
+
+* [React Redux reference](http://redux.js.org/docs/basics/UsageWithReact.html)
+
+
 ### Installation
 
 ```
 npm install redux --save
 ```
 
-## Redux rules
+
+## Redux principles / rules
 
 * The Redux state of an application is a single READONLY javascript object.
 
@@ -26,6 +34,8 @@ npm install redux --save
 * An action is a simple js object that must have a `type` field of type string. It can have other field as a payload. Actions do not describe how the state has to be changed.
 
 * The changes to apply to the state are done by reducers. Reducers are pure functions that take the previous state and the action as arguments and return the new state.
+
+* Redux state and actions must be serializable
 
 
 ## Run the test case
