@@ -30,7 +30,7 @@ This means that for old browser that do not support this API, we need to use a [
 ```
 {
 	"greeting": "Bonjour {name}! Bienvenue sur Changr!",
-	"test-plural": "Vous avez {itemCount, plural, =0 {no items} one {1 item} other {{itemCount} items}}.",
+	"test-plural": "Vous {itemCount, plural, =0 {n'avez pas d'items} one {avez 1 item} other {avez {itemCount} items}}.",
 	"profile": "Profil",
 	"edit-profile": "Modifier votre profil",
 	"edit-action": "Modifier votre action",

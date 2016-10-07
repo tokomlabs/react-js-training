@@ -160,7 +160,7 @@ Updating:
 
 [see code here](./src/app11.js)
 
-* HOC
+* HOC - Higher Order Component
 
 [see code here](./src/app12.js)
 

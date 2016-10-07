@@ -7,14 +7,18 @@ class App01 extends React.Component {
 
 		// return React.createElement('h1',null,'Hello js learner!');
 
-		return <h1>Hello JSX learner!</h1>
+		// return <h1>Hello JSX learner!</h1>
 
-		// return (
-		// 	<p>
-		// 		<b>Hello</b>
-		// 		<i> learner !</i>
-		// 	</p>
-		// )
+		var name = "Thomas";
+
+		return (
+			<p>
+				<b>Hello {name}</b>
+				<button onClick={ (e) => this.manageClick() }
+				<button onClick={ function(e) { this.manageClick(); } }
+				<i> learner !</i>
+			</p>
+		)
 	}
 }
 

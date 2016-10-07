@@ -36,8 +36,8 @@ Most commonly used commands:
 $ cordova create hello com.example.hello HelloWorld
 
 # add platforms
-$ cordova platform add ios --save
-$ cordova platform add android --save
+$ cordova platform add ios
+$ cordova platform add android
 
 # list current platforms
 $ cordova platform list
@@ -93,7 +93,7 @@ You can create custom plugins rather easily thanks to a normalized API. See [her
 </html>
 ```
 
-* [Content Security Policy rules](<access origin="https://google.com" />) are to be implemented via the html meta.
+* [Content Security Policy rules](https://github.com/apache/cordova-plugin-whitelist#content-security-policy) are to be implemented via the html meta.
 
    Controls which network requests (images, XHRs, etc) are allowed to be made (via webview directly).
 ```
@@ -153,6 +153,12 @@ To run the sample app, follow those steps:
 * Create a cordova project
 ```
 $ cordova create cordova com.example.hello HelloWorld
+```
+
+* Add the platforms you want:
+```
+$ cordova platform add ios
+$ cordova platform add android
 ```
 
 * Install few plugins

@@ -15,7 +15,7 @@ module.exports = {
 				loader: 'babel',
 				query: {
 					presets: ['es2015', 'react'],
-					plugins: [ ["conditional-compilation", { TARGET: "cordova" }] ]
+					plugins: [ ["conditional-compilation", { TARGET: "web" }] ]
 				}
 			},
 			{

@@ -25,7 +25,7 @@ npm install react-router@next --save # currently installs the 4.x version
 
 * Route components can be nested
 
-* Redirect routes can be defined with the RedirectRoute component
+* Redirect routes can be defined with the Redirect component
 
 * Indexes are managed with the IndexRoute and IndexRedirect components
 
