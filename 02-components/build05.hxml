@@ -1,0 +1,4 @@
+-main App05
+-js .tmp/main.js
+-cp src
+-lib react

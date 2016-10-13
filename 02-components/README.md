@@ -9,6 +9,12 @@
 
 * [MDN javascript API reference](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference),
 
+### for Haxe user
+
+* [Haxe API](http://api.haxe.org)
+
+### For ES6 users
+
 * [ES6 specifications](http://www.ecma-international.org/ecma-262/6.0/)
 
 * [Learn ES6](https://babeljs.io/docs/learn-es2015/)

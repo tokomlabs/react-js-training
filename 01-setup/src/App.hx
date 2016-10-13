@@ -23,7 +23,7 @@ class HelloWorld extends ReactComponentOf<Dynamic, Dynamic, Dynamic> {
 	override function render() {
 
 		return jsx('
-			<div>Hello world!</div>
+			<div>Hello Herakles!</div>
 		');
 	}
 }

@@ -7,6 +7,10 @@
 
 * [Babel](https://babeljs.io/) to translate ES6 and JSX code to older javascript
 
+* or [Haxe](www.haxe.org) to compile .hx to javascript
+
+  and [haxe-react](https://github.com/massiveinteractive/haxe-react) to compile jsx and have react js types definitions
+
 * [Webpack](https://webpack.github.io/) to support `require` and `import` statements
 
 	See also:
