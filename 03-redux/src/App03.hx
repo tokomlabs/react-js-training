@@ -6,8 +6,8 @@ import api.react.ReactDOM;
 
 import api.react.addon.ReactRedux;
 
-typedef ApplicationState = {
-	todos : Array<TododItem>
+typedef State = {
+	todos : Array<TodoItem>
 }
 
 class App03 {
@@ -19,7 +19,7 @@ class App03 {
 
 	var store : Dynamic;
 
-	static inline function getDefaultState() : ApplicationState {
+	static inline function getDefaultState() : State {
 
 		return { todos: [] };
 	}
@@ -33,7 +33,7 @@ class App03 {
 		renderApp();
 	}
 
-	function myReducer(state : ApplicationState, action : Dynamic) { trace('myReducer $state $action');
+	function myReducer(state : State, action : Dynamic) { trace('myReducer $state $action');
 
 		if (state == null) state = getDefaultState();
 
@@ -119,7 +119,7 @@ class TodoList extends ReactComponentOf<TodoListProps, TodoListState, Dynamic> {
 
 	static public var Reduxed = ReactRedux.connect(mapStateToProps)(TodoList);
 
-	static function mapStateToProps(state : ApplicationState, ownProps : TodoListProps) : TodoListProps {
+	static function mapStateToProps(state : State, ownProps : TodoListProps) : TodoListProps {
 
 		return js.Object.assign({}, ownProps, { todos: state.todos });
 	}
@@ -143,11 +143,6 @@ class TodoList extends ReactComponentOf<TodoListProps, TodoListState, Dynamic> {
 	function toggleComplete(td : TodoItem) {
 
 		props.dispatch({ type: "TOGGLE_COMPLETE", item: td });
-	}
-
-	function onSubmitTodo(td : TodoItem) {
-
-		props.dispatch({ type: "ADD_TODO", item: td });
 	}
 
 	function renderTodo(td : TodoItem) {
@@ -212,7 +207,7 @@ class TodoList extends ReactComponentOf<TodoListProps, TodoListState, Dynamic> {
 
 		return jsx('
 			<div>
-				<TodoInput onSubmitTodo={onSubmitTodo} />
+				<TodoInput.Reduxed />
 				{ renderHeader() }
 				{ renderTodos() }
 				<TodoFilters onChange={changeFilter} />
@@ -226,14 +221,18 @@ typedef TodoInputRefs = {
 }
 
 typedef TodoInputProps = {
-	onSubmitTodo : TodoItem -> Void
+	? dispatch : Dynamic -> Void
 }
 
 class TodoInput extends ReactComponentOf<TodoInputProps, Dynamic, TodoInputRefs> {
 
+	static public var Reduxed = ReactRedux.connect()(TodoInput);
+
 	function submit() {
 
-		this.props.onSubmitTodo({ name: this.refs.mi.value });
+		// this.props.onSubmitTodo({ name: this.refs.mi.value });
+
+		props.dispatch({ type: "ADD_TODO", item: { name: this.refs.mi.value } });
 	}
 
 	override function render() {
