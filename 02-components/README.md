@@ -194,6 +194,8 @@ A good example of presentational components is [MaterialUI](material-ui.com).
 
 [see code here](./src/app15.js)
 
+[More info about CSS Modules](https://github.com/css-modules/css-modules).
+
 Dev:
 ```
 $ webpack-dev-server --config webpack.config.dev-css.js --content-base app/

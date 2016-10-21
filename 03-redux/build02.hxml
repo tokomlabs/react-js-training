@@ -1,4 +1,5 @@
--main App
+-main App02
 -js .tmp/main.js
 -cp src
 -lib react
+-lib js-kit

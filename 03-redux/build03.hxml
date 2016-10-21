@@ -1,0 +1,6 @@
+-main App03
+-js .tmp/main.js
+-cp src
+-lib react
+-lib react-addons
+-lib js-kit
