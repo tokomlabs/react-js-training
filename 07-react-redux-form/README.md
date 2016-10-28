@@ -51,3 +51,4 @@ dispatch(actions.setValidity('user.email', {
 // ...
 ```
   See [RRF actions creator API](https://davidkpiano.github.io/react-redux-form/docs/api/actions.html);
+
