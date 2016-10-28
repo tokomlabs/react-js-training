@@ -1,4 +1,8 @@
 {
 	"greetings": "Bienvenue {name}!",
-	"msg-count": "Vous {count, plural, =0 {n'avez pas de nouveau message} one {avez un message non lu.} other {avez {count} messages non lus.}}."
+	"msg-count": "Vous {count, plural, =0 {n'avez pas de nouveau message} one {avez un message non lu.} other {avez {count} messages non lus.}}.",
+	"question-label": "Comment allez vous aujourd'hui ?",
+	"ans01": "Très bien",
+	"ans02": "Super bien",
+	"ans03": "Encore mieux"
 }

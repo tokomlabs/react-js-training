@@ -1,0 +1,6 @@
+-main App
+-js .tmp/main.js
+-cp hx-src
+-lib js-kit
+-lib react
+-lib react-addons

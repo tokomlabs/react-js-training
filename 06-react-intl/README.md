@@ -30,7 +30,7 @@ This means that for old browser that do not support this API, we need to use a [
 ```
 {
 	"greeting": "Bonjour {name}! Bienvenue sur Changr!",
-	"test-plural": "Vous {itemCount, plural, =0 {n'avez pas d'items} one {avez 1 item} other {avez {itemCount} items}}.",
+	"test-plural": "Vous {itemCount, plural, =0 {n'avez pas d'item} one {avez un item} other {avez {itemCount} items}}.",
 	"profile": "Profil",
 	"edit-profile": "Modifier votre profil",
 	"edit-action": "Modifier votre action",
@@ -50,6 +50,8 @@ import es from 'react-intl/locale-data/es';
 addLocaleData([...en, ...fr, ...es]);
 // ...
 ```
+
+* Application locale data can be included to output build with the use `require` statements. In that case, add a json loader to your webpack config so that webpack will know how to handle it: `npm install json-loader --save-dev`
 
 * To enable React Intl in your application, you need to wrap it in a [`IntlProvider`](https://github.com/yahoo/react-intl/wiki/Components#intlprovider) component:
 
@@ -71,7 +73,7 @@ ReactDOM.render(
 ```
 import { FormattedMessage } from 'react-intl'
 
-cont myComp = (firstName) => (
+const myComp = (firstName) => (
 	<FormattedMessage
 	    id='app.greeting'
 	    description='Greeting to welcome the user to the app'
