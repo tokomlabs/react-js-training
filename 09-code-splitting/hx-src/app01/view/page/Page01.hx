@@ -5,6 +5,8 @@ import api.react.ReactMacro.jsx;
 
 import api.react.addon.ReactRedux;
 
+import api.react.addon.intl.FormattedMessage;
+
 typedef Page01Props = {
 	? dispatch : Dynamic -> Void,
 	cnt : Int
@@ -24,13 +26,13 @@ class Page01 extends ReactComponentOf<Page01Props, Dynamic, Dynamic> {
 		props.dispatch({ type: "test1" });
 	}
 
-	override function render() {
+	override function render() { trace(props.cnt);
 
 		return jsx('
 			<div>
-				<h1>App1 cnt page</h1>
-				<p>Current count is ${props.cnt}</p>
-				<button onClick={increaseCb}>INCREASE IT</button>
+				<h1><FormattedMessage id="page1_title" /></h1>
+				<p><FormattedMessage id="msg-count" values={{ cnt: Std.string(props.cnt) }} /></p>
+				<button onClick={increaseCb}><FormattedMessage id="btn-increase" /></button>
 			</div>
 		');
 	}

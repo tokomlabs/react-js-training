@@ -3,170 +3,54 @@ package portal.view;
 import api.react.ReactComponent;
 import api.react.ReactMacro.jsx;
 
-import api.react.addon.ReactRouter;
-import api.react.addon.router.Router;
-import api.react.addon.router.Route;
-import api.react.addon.router.IndexRoute;
+import api.react.addon.ReactRedux;
 
-import portal.view.layout.PortalLayout;
-import portal.view.page.HomePage;
+import api.react.addon.ReactIntl;
+import api.react.addon.intl.IntlProvider;
+import api.react.addon.intl.ReactIntlLocaleData;
+
+import portal.view.router.PortalRouter;
 
 typedef ApplicationProps = {
-	injectAsyncReducer: String -> Dynamic -> Void
+	locale : String,
+	? injectAsyncReducer: String -> Dynamic -> Void
 }
 
 class Application extends ReactComponentOf<ApplicationProps, Dynamic, Dynamic> {
 
-	function moduleFailed(name : String) {
+	static public var Reduxed : Application = ReactRedux.connect(mapStateToProps)(Application);
 
-		js.Browser.console.error('$name module loading failed!');
+	static function mapStateToProps(st : Dynamic, ownProps : ApplicationProps) : ApplicationProps {
+
+		return { locale: st.common.locale }
 	}
 
-	function getApp01IndexRoute(location : Dynamic, callback : Dynamic -> Dynamic -> Void) {
+	static function messages() {
 
-		js.Browser.console.log('getApp01IndexRoute',location);
+		return 
 
-		Require.module('./app01').then(
-
-			function(name:String) {
-
-				trace('app01 module loaded!');
-
-				callback(null, app01.App01.indexRoute);
-			}, 
-
-			moduleFailed);
+			[ 
+				"fr" => js.Lib.require('../app/lang/portal-fr.json'),
+				"en" => js.Lib.require('../app/lang/portal-en.json')
+			];
 	}
 
-	function getApp01Component(location : Dynamic, callback : Dynamic -> Dynamic -> Void) {
+	public function new(p) {
 
-		js.Browser.console.log('getApp01Component',location);
+		super(p);
 
-		Require.module('./app01').then(
-
-			function(name:String) {
-
-				trace('app01 module loaded!');
-
-				props.injectAsyncReducer("app1", app01.App01.createReducer());
-
-				callback(null, app01.App01.routeComponent);
-			}, 
-
-			moduleFailed);
-	}
-
-	function getApp01Routes(location : Dynamic, callback : Dynamic -> Dynamic -> Void) {
-
-		js.Browser.console.log('getApp01Routes',location);
-
-		Require.module('./app01').then(
-
-			function(name:String) {
-
-				trace('app01 module loaded!');
-
-				callback(null, app01.App01.childRoutes);
-			}, 
-
-			moduleFailed);
-	}
-
-	function getApp02IndexRoute(location : Dynamic, callback : Dynamic -> Dynamic -> Void) {
-
-		js.Browser.console.log('getApp02IndexRoute',location);
-
-		Require.module('./app02').then(
-
-			function(name:String) {
-
-				trace('app02 module loaded!');
-
-				callback(null, app02.App02.indexRoute);
-			}, 
-
-			moduleFailed);
-	}
-
-	function getApp02Component(location : Dynamic, callback : Dynamic -> Dynamic -> Void) {
-
-		js.Browser.console.log('getApp02Component',location);
-
-		Require.module('./app02').then(
-
-			function(name:String) {
-
-				trace('app02 module loaded!');
-
-				callback(null, app02.App02.routeComponent);
-			}, 
-
-			moduleFailed);
-	}
-
-	function getApp02Routes(location : Dynamic, callback : Dynamic -> Dynamic -> Void) {
-
-		js.Browser.console.log('getApp02Routes',location);
-
-		Require.module('./app02').then(
-
-			function(name:String) {
-
-				trace('app02 module loaded!');
-
-				callback(null, app02.App02.childRoutes);
-			}, 
-
-			moduleFailed);
-	}
-
-	function getRootRoute() {
-
-		return
-
-			{
-			  childRoutes: [ {
-			    path: '/',
-			    component: PortalLayout,
-			    indexRoute: {
-			    	component: HomePage.Reduxed
-			    },
-			    childRoutes: [
-			        {
-					  path: 'app1',
-					  getIndexRoute: getApp01IndexRoute,
-					  getChildRoutes: getApp01Routes,
-					  getComponent: getApp01Component
-					},
-			        {
-					  path: 'app2',
-					  getIndexRoute: getApp02IndexRoute,
-					  getChildRoutes: getApp02Routes,
-					  getComponent: getApp02Component
-					}
-			    ]
-			  } ]
-			}
-	}
-
-	var router : Dynamic = null;
-
-	function getRouter() {
-
-		if (router == null) {
-
-			router = 
-
-				jsx('
-					<Router history={ReactRouter.browserHistory}
-							routes={getRootRoute()} />
-		        ');
-		}
-		return router;
+		ReactIntl.addLocaleData(ReactIntlLocaleData.en);
+		ReactIntl.addLocaleData(ReactIntlLocaleData.fr);
 	}
 
     override function render() {
 
-    	return getRouter();
+    	var msgs = messages().get(props.locale); trace(msgs);
+
+    	return jsx('
+			<IntlProvider locale={props.locale} messages={msgs}>
+				<PortalRouter injectAsyncReducer={props.injectAsyncReducer} />
+			</IntlProvider>
+    	');
     }
 }

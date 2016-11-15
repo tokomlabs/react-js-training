@@ -6,7 +6,7 @@ class PortalRdcr {
 
 	static public function getDefaultState() : PortalState {
 
-		return {  }
+		return { }
 	}
 
 	static public function execute(state : PortalState, action : Dynamic) : PortalState {

@@ -7,6 +7,8 @@ import api.react.addon.ReactRedux;
 
 import api.react.addon.router.Link;
 
+import api.react.addon.intl.FormattedMessage;
+
 typedef HomePageProps = {
 	? dispatch : Dynamic -> Void,
 	? user : String
@@ -32,16 +34,16 @@ class HomePage extends ReactComponentOf<HomePageProps, Dynamic, Dynamic> {
 
 			return jsx('
 				<div>
-					Please login first: <button onClick={loginCb}>LOGIN</button>
+					<FormattedMessage id="login" /><button onClick={loginCb}>LOGIN</button>
 				</div>
 			');
 		}
 
 		return jsx('
 			<div>
-				<p>Welcome ${props.user}</p>
-				<Link to="/app1">Go to App 1</Link><br />
-				<Link to="/app2">Go to App 2</Link><br />
+				<p><FormattedMessage id="welcome" values={{ name: props.user }} /></p>
+				<Link to="app1"><FormattedMessage id="gotoapp1" /></Link><br />
+				<Link to="app2"><FormattedMessage id="gotoapp2" /></Link><br />
 			</div>
 		');
 	}
@@ -50,7 +52,7 @@ class HomePage extends ReactComponentOf<HomePageProps, Dynamic, Dynamic> {
 
 		return jsx('
 			<div>
-				<h1>Portal Main Menu</h1>
+				<h1><FormattedMessage id="portal_title" /></h1>
 				{ renderPageContent() }
 			</div>
 		');

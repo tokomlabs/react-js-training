@@ -20,7 +20,7 @@ class App01 {
 
 	static public var indexRoute = { component: HomePage };
 
-	static public var routeComponent = App01Layout;
+	static public var routeComponent = App01Layout.Reduxed;
 
 	static public var childRoutes = 
 

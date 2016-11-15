@@ -18,5 +18,13 @@ module.exports = {
 	plugins: [
 		new CommonsChunkPlugin('common.js')
 	],
-	module: {}	
+	module: {
+		loaders: [
+			{
+				test: /\.json$/,
+				exclude: /node_modules/,
+				loader: 'json'
+			}
+		]
+	}	
 }

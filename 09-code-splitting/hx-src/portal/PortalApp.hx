@@ -17,7 +17,8 @@ class PortalApp {
 	static var initialRdcrs : Dynamic = 
 
 		{
-			portal: portal.rdcr.PortalRdcr.execute
+			portal: portal.rdcr.PortalRdcr.execute,
+			common: common.rdcr.CommonRdcr.execute
 		}
 
 	static var asyncRdcrs : Dynamic = { }
@@ -59,7 +60,7 @@ class PortalApp {
 					
 			jsx('
 				<Provider store={store}>
-					<Application injectAsyncReducer={injectAsyncReducer} />
+					<Application.Reduxed injectAsyncReducer={injectAsyncReducer} />
 				</Provider>
 			'),
 

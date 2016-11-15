@@ -15,8 +15,13 @@
 
 ## Installation
 
+Run
 ```
-npm install react react-dom react-router webpack --save
+npm install react react-dom react-router react-intl react-redux redux redux-logger --save
+```
+and
+```
+npm install webpack json-loader --save-dev
 ```
 
 ## Important code splitting notions
@@ -58,8 +63,10 @@ This mecanism can be used at any Route depth and as many time as needed.
 
 ### React Redux
 
-The only thing we really need here is just a mecanism to update our store's registered reducers. To do so, use the [`replaceReducer()` store API](https://github.com/reactjs/redux/blob/master/docs/api/Store.md#replacereducernextreducer) every time a new module is loaded.
+The only thing we really need here is just a mecanism to update our store's registered reducers. To do so, we use the [`replaceReducer()` store API](https://github.com/reactjs/redux/blob/master/docs/api/Store.md#replacereducernextreducer) every time a new module is loaded.
 
 
 ### React Intl
+
+React Intl is very easy to implement in modules. This is due to `IntlProvider` that allows how many nested `IntlProvider` instances as we want and when that happens, the nested <IntlProvider> will inherit from its nearest ancestor <IntlProvider>.
 
