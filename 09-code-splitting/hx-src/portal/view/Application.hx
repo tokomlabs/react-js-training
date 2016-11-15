@@ -11,14 +11,18 @@ import api.react.addon.router.IndexRoute;
 import portal.view.layout.PortalLayout;
 import portal.view.page.HomePage;
 
-class Application extends ReactComponentOf<Dynamic, Dynamic, Dynamic> {
+typedef ApplicationProps = {
+	injectAsyncReducer: String -> Dynamic -> Void
+}
 
-	static function moduleFailed(name : String) {
+class Application extends ReactComponentOf<ApplicationProps, Dynamic, Dynamic> {
+
+	function moduleFailed(name : String) {
 
 		js.Browser.console.error('$name module loading failed!');
 	}
 
-	static function getApp01IndexRoute(location : Dynamic, callback : Dynamic -> Dynamic -> Void) {
+	function getApp01IndexRoute(location : Dynamic, callback : Dynamic -> Dynamic -> Void) {
 
 		js.Browser.console.log('getApp01IndexRoute',location);
 
@@ -34,7 +38,7 @@ class Application extends ReactComponentOf<Dynamic, Dynamic, Dynamic> {
 			moduleFailed);
 	}
 
-	static function getApp01Component(location : Dynamic, callback : Dynamic -> Dynamic -> Void) {
+	function getApp01Component(location : Dynamic, callback : Dynamic -> Dynamic -> Void) {
 
 		js.Browser.console.log('getApp01Component',location);
 
@@ -44,13 +48,15 @@ class Application extends ReactComponentOf<Dynamic, Dynamic, Dynamic> {
 
 				trace('app01 module loaded!');
 
+				props.injectAsyncReducer("app1", app01.App01.createReducer());
+
 				callback(null, app01.App01.routeComponent);
 			}, 
 
 			moduleFailed);
 	}
 
-	static function getApp01Routes(location : Dynamic, callback : Dynamic -> Dynamic -> Void) {
+	function getApp01Routes(location : Dynamic, callback : Dynamic -> Dynamic -> Void) {
 
 		js.Browser.console.log('getApp01Routes',location);
 
@@ -66,7 +72,7 @@ class Application extends ReactComponentOf<Dynamic, Dynamic, Dynamic> {
 			moduleFailed);
 	}
 
-	static function getApp02IndexRoute(location : Dynamic, callback : Dynamic -> Dynamic -> Void) {
+	function getApp02IndexRoute(location : Dynamic, callback : Dynamic -> Dynamic -> Void) {
 
 		js.Browser.console.log('getApp02IndexRoute',location);
 
@@ -82,7 +88,7 @@ class Application extends ReactComponentOf<Dynamic, Dynamic, Dynamic> {
 			moduleFailed);
 	}
 
-	static function getApp02Component(location : Dynamic, callback : Dynamic -> Dynamic -> Void) {
+	function getApp02Component(location : Dynamic, callback : Dynamic -> Dynamic -> Void) {
 
 		js.Browser.console.log('getApp02Component',location);
 
@@ -98,7 +104,7 @@ class Application extends ReactComponentOf<Dynamic, Dynamic, Dynamic> {
 			moduleFailed);
 	}
 
-	static function getApp02Routes(location : Dynamic, callback : Dynamic -> Dynamic -> Void) {
+	function getApp02Routes(location : Dynamic, callback : Dynamic -> Dynamic -> Void) {
 
 		js.Browser.console.log('getApp02Routes',location);
 
@@ -114,41 +120,53 @@ class Application extends ReactComponentOf<Dynamic, Dynamic, Dynamic> {
 			moduleFailed);
 	}
 
-	static var rootRoute = untyped
+	function getRootRoute() {
 
-		{
-		  childRoutes: [ {
-		    path: '/',
-		    component: PortalLayout,
-		    indexRoute: {
-		    	component: HomePage
-		    },
-		    childRoutes: [
-		        {
-				  path: 'app1',
-				  getIndexRoute: getApp01IndexRoute,
-				  getChildRoutes: getApp01Routes,
-				  getComponent: getApp01Component
-				},
-		        {
-				  path: 'app2',
-				  getIndexRoute: getApp02IndexRoute,
-				  getChildRoutes: getApp02Routes,
-				  getComponent: getApp02Component
-				}
-		    ]
-		  } ]
+		return
+
+			{
+			  childRoutes: [ {
+			    path: '/',
+			    component: PortalLayout,
+			    indexRoute: {
+			    	component: HomePage.Reduxed
+			    },
+			    childRoutes: [
+			        {
+					  path: 'app1',
+					  getIndexRoute: getApp01IndexRoute,
+					  getChildRoutes: getApp01Routes,
+					  getComponent: getApp01Component
+					},
+			        {
+					  path: 'app2',
+					  getIndexRoute: getApp02IndexRoute,
+					  getChildRoutes: getApp02Routes,
+					  getComponent: getApp02Component
+					}
+			    ]
+			  } ]
+			}
+	}
+
+	var router : Dynamic = null;
+
+	function getRouter() {
+
+		if (router == null) {
+
+			router = 
+
+				jsx('
+					<Router history={ReactRouter.browserHistory}
+							routes={getRootRoute()} />
+		        ');
 		}
-
-	static var router : Dynamic = 
-
-    	jsx('
-			<Router history={ReactRouter.browserHistory}
-					routes={rootRoute} />
-        ');
+		return router;
+	}
 
     override function render() {
 
-    	return router;
+    	return getRouter();
     }
 }

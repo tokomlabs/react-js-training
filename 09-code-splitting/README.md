@@ -8,7 +8,7 @@
 
 * [Code splitting a React Router application](https://github.com/ReactTraining/react-router/blob/master/docs/guides/DynamicRouting.md),
 
-* [Code splitting a React Redux application](), // TODO
+* [Code splitting a React Redux application](https://github.com/reactjs/redux/blob/master/docs/api/Store.md#replacereducernextreducer),
 
 * [Multiple Intl contexts a React Intl application](https://github.com/yahoo/react-intl/wiki/Components#multiple-intl-contexts).
 
@@ -58,13 +58,7 @@ This mecanism can be used at any Route depth and as many time as needed.
 
 ### React Redux
 
-* 
-
-* 
-
-* 
-
-* 
+The only thing we really need here is just a mecanism to update our store's registered reducers. To do so, use the [`replaceReducer()` store API](https://github.com/reactjs/redux/blob/master/docs/api/Store.md#replacereducernextreducer) every time a new module is loaded.
 
 
 ### React Intl

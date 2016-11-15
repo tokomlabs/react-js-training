@@ -25,8 +25,17 @@ class App01 {
 	static public var childRoutes = 
 
 		[
-			jsx('<Route path="01" component={Page01} />'),
+			jsx('<Route path="01" component={Page01.Reduxed} />'),
 			jsx('<Route path="02" component={Page02} />'),
 			jsx('<Route path="03" component={Page03} />')
 		];
+
+	static public function createReducer() {
+
+		trace("app01 createReducer()");
+
+		// note: we could have anything here, like a call to Redux.combineReducers()
+
+		return app01.rdcr.App01Rdcr.execute;
+	}
 }

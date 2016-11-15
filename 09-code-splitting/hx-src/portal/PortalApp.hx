@@ -11,65 +11,56 @@ import portal.view.Application;
 
 class PortalApp {
 
-	// static var store : Dynamic;
+	static var store : Dynamic;
 
-	// // TODO this should better be in a separate file
-	// static function initStore() {
+	// TODO this should better be in a separate file ***
+	static var initialRdcrs : Dynamic = 
 
-	// 	var initialRegistration : RegistrationFormData = 
+		{
+			portal: portal.rdcr.PortalRdcr.execute
+		}
 
-	// 		{ 
-	// 			firstName: '',
-	// 			lastName: '',
-	// 			email: '',
-	// 			pass: '',
-	// 			confirmPass: ''
-	// 		};
+	static var asyncRdcrs : Dynamic = { }
 
-	// 	var initialLogin : LoginFormData = 
+	static function createReducer() {
+		
+		return js.npm.Redux.combineReducers(js.Object.assign({},initialRdcrs,asyncRdcrs));
+	}
 
-	// 		{ 
-	// 			email: '',
-	// 			password: ''
-	// 		};
+	static function initStore() {
 
-	// 	return 
+		return 
 
-	// 		js.npm.Redux.createStore(
+			js.npm.Redux.createStore(
 
-	// 			ReactReduxForm.combineForms(
+				createReducer(),
 
-	// 			{
-	// 				registration: initialRegistration,
-	// 				login: initialLogin
-	// 			}),
+				js.npm.Redux.applyMiddleware(ReduxLogger.createLogger())
+			);
+	}
 
-	// 			js.npm.Redux.applyMiddleware(ReduxThunk,ReduxLogger.createLogger())
-	// 		);
-	// }
+	static function injectAsyncReducer(name : String, asyncReducer : Dynamic) {
+	
+		Reflect.setField(asyncRdcrs,name,asyncReducer);
+	
+		store.replaceReducer(createReducer());
+	}
+	// ************** ************** ************** *******
 
 	static function main() {
 
 		// 1 init Redux store
 
-		// store = initStore();
+		store = initStore();
 
 		// 2 boot React app
-
-		// ReactDOM.render(
-					
-		// 	jsx('
-		// 		<Provider store={store}>
-		// 			<Application />
-		// 		</Provider>
-		// 	'),
-
-		// 	js.Browser.document.querySelector("#app"));
 
 		ReactDOM.render(
 					
 			jsx('
-				<Application />
+				<Provider store={store}>
+					<Application injectAsyncReducer={injectAsyncReducer} />
+				</Provider>
 			'),
 
 			js.Browser.document.querySelector("#app"));
