@@ -1,0 +1,27 @@
+-cp hx-lib
+-cp hx-src
+-lib js-kit
+-lib react
+-lib react-addons
+--macro Stub.modules()
+--each
+
+
+-main portal.PortalApp
+-js .tmp/index.js
+--macro exclude('app01')
+--macro exclude('app02')
+
+
+
+--next
+
+app01.App01
+-js .tmp/app01.js
+
+
+--next
+
+
+app02.App02
+-js .tmp/app02.js
